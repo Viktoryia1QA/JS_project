@@ -58,12 +58,12 @@ console.log(strToNumber);
 let booleanToNumber = Number(false);
 console.log(booleanToNumber);
 
-// Number(null)                   // 0
-// Number(undefined)              // NaN
-// Number(true)                   // 1
-// Number(false)                  // 0
-// Number(" 12 ")                 // 12
-// Number("-12.34")               // -12.34
-// Number("\n")                   // 0
-// Number(" 12s ")                // NaN
-// Number(123)                    // 123
+Number(null)                   // 0
+Number(undefined)              // NaN
+Number(true)                   // 1
+Number(false)                  // 0
+Number(" 12 ")                 // 12
+Number("-12.34")               // -12.34
+Number("\n")                   // 0
+Number(" 12s ")                // NaN
+Number(123)                    // 123
