@@ -8,7 +8,6 @@ console.log("string + number = " + b);
 let c = false + 10;//boolean + number
 console.log("boolean + number = " + c); 
 
-
 //multiplication
 let am = `string` * true; //string * boolean
 console.log("string * boolean = " + am); 
