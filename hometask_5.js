@@ -104,20 +104,20 @@ let max = m;
 
 let resultArray = [];
 
-for (let i = 0; i < n-1; i++) {
+for (let i = 0; i < n - 1; i++) {
     let number = getRandomIntInclusive(0, max);
     resultArray[i] = number;
     max = max - number;
-    resultArray[n-1] = max;
+    resultArray[n - 1] = max;
 }
 
 console.log(resultArray);
 console.log(resultArray.length === n);
 
 let sum = 0;
-for(let i = 0; i < resultArray.length; i++){
+for (let i = 0; i < resultArray.length; i++) {
     sum += resultArray[i];
-    }
+}
 console.log(sum);
 
 // 3 task - 2
