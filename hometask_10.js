@@ -19,14 +19,14 @@ let promiseDelay1 = getTimeoutWithDelay();
 let promiseDelay2 = getTimeoutWithDelay();
 let promiseDelay3 = getTimeoutWithDelay();
 
-// // Promise.all([promiseDelay1, promiseDelay2, promiseDelay3])
-// // .then((data) => {
-// //     let sum = data.reduce((acc, next) => {
-// //         return acc + next;
-// //     })
-// //     console.log(sum);
-// //     return sum;
-// // })
+// Promise.all([promiseDelay1, promiseDelay2, promiseDelay3])
+// .then((data) => {
+//     let sum = data.reduce((acc, next) => {
+//         return acc + next;
+//     })
+//     console.log(sum);
+//     return sum;
+// })
 
 Promise.all([promiseDelay1, promiseDelay2, promiseDelay3])
     .then((arr) => {
@@ -41,9 +41,31 @@ Promise.all([promiseDelay1, promiseDelay2, promiseDelay3])
     })
 
 
-// 2 task: need to create 3 Promises with setTimeout (Delay(1, 5)). promise1 = 1, promise2 = 2, promise3 = 3.
-//  with Promise.race find faster Promise
+// // 2 task: need to create 3 Promises with setTimeout (Delay(1, 5)). promise1 = 1, promise2 = 2, promise3 = 3.
+// //  with Promise.race find faster Promise
 
+// // 1 option after refactoring:
+
+function getPromise(min, max, resolveOfPromise) {
+    return new Promise((resolve, reject) => {
+        let random = getRandom(min, max);
+        setTimeout(() => {
+            resolve(resolveOfPromise);
+        }, random * 1000);
+        console.log(`2 task: Delay of Promise1 is "${random}" `);
+    })
+}
+
+let promiseToRace1 = getPromise(1, 5, 1);
+let promiseToRace2 = getPromise(1, 5, 2);
+let promiseToRace3 = getPromise(1, 5, 3);
+
+Promise.race([promiseToRace1, promiseToRace2, promiseToRace3])
+    .then((data) => {
+        console.log(`2 task: Promise with result "${data}" is faster`);
+    })
+
+//     // 2 option first version :
 let promise1 = new Promise((resolve, reject) => {
     let random = getRandom(1, 5);
     setTimeout(() => {
@@ -74,8 +96,8 @@ Promise.race([promise1, promise2, promise3])
         console.log(`2 task: Promise with result "${data}" is faster`);
     })
 
-// 3 task: - need to create function getNum, which returns new Promise(resolve, reject), with with setTimeout (Delay(1, 5)).
-//- create async getSqrOfNum() =  await getNum(), and then Square of result of getNum() function.
+// // 3 task: - need to create function getNum, which returns new Promise(resolve, reject), with with setTimeout (Delay(1, 5)).
+// //- create async getSqrOfNum() =  await getNum(), and then Square of result of getNum() function.
 
 function getNum() {
     return new Promise((resolve, reject) => {
@@ -96,6 +118,27 @@ getSqrOfNum()
 // 4 task: - need to create function getNum1, which returns new Promise(resolve, reject), with with setTimeout (Delay(1, 5)) - 3sec.
 // function getNum2, which returns new Promise(resolve, reject), with with setTimeout (Delay(6, 10)) - 5sec.
 //- create async getSumOfNum() =  await getNum1() and getNum2(), and then Sum of result of getNum() functions.
+
+// 1 option after refactoring:
+
+function getNumUniv(minUn, maxUn, delayUn) {
+    return new Promise((resolve, reject) => {
+        let random = getRandom(minUn, maxUn);
+        setTimeout(() => {
+            resolve(random);
+        }, delayUn);
+        console.log(`4 task 1 option: Random for getNumUniv is "${random}" `);
+    })
+}
+
+async function getSumOfNumUniv() {
+    let resultUniv1 = await getNumUniv(1, 5, 3000);
+    let resultUni2 = await getNumUniv(6, 10, 5000);
+    return console.log(`4 task 1 option: Sum is "${resultUniv1 + resultUni2}"`);
+}
+getSumOfNumUniv()
+
+ // 2 option first version :
 
 function getNum1() {
     return new Promise((resolve, reject) => {
@@ -120,6 +163,6 @@ function getNum2() {
 async function getSumOfNum() {
     let result1 = await getNum1();
     let result2 = await getNum2();
-    return console.log(`4 task: Sum is "${result1 + result2}"`);
+    return console.log(`4 task 2 option: Sum is "${result1 + result2}"`);
 }
 getSumOfNum()
