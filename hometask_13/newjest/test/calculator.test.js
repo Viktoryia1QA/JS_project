@@ -158,7 +158,7 @@ describe('check Multiply-functionality', function () {
         expect(result).toBeCloseTo(0.15);
     });
 
-    fit('check result is not "Null" during multiply to 0', async () => {
+    it('check result is not "Null" during multiply to 0', async () => {
         let result = calc.multiply(5, 0)
         expect(result).not.toBeNull();
         expect(result).toBe(0);
@@ -220,8 +220,8 @@ describe('check Divide-functionality', function () {
     });
 
     it('check divide of fractional numbers ', async () => {
-        let result = calc.divide(0.3, 0.5)
-        expect(result).toBeCloseTo(0.15);
+        let result = calc.divide(0.6, 2)
+        expect(result).toBeCloseTo(0.3);
     });
 
     it('check division null to number  ', async () => {
@@ -245,7 +245,7 @@ describe('check Divide-functionality', function () {
     });
 
     //is this the expected behavior?? array as number?
-    fit('check result of divide array to number', async () => {
+    it('check result of divide array to number', async () => {
         let result = calc.divide([5, 1], 5)
         expect(result).toBeNaN();;
     });
