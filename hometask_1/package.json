@@ -1,0 +1,23 @@
+{
+  "name": "js_project",
+  "version": "1.0.0",
+  "description": "My first JS_project",
+  "main": "index.js",
+  "scripts": {
+    "script": "node hometask.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viktoryia1QA/JS_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Viktoryia1QA/JS_project/issues"
+  },
+  "homepage": "https://github.com/Viktoryia1QA/JS_project#readme",
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "yargs": "^17.3.1"
+  }
+}
