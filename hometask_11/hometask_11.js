@@ -127,6 +127,11 @@ newTeamGame.addAsTeamGame();
 // console.log(gameRoom.filterByMaterial('wooden'));
 
 
+console.log(gameRoom.filterByFixPrice(20).filterByMaterial('metal'));
+
+// console.log(gameRoom.filterByMaterial('metal'));
+// console.log(gameRoom.filterByFixPrice(20));
+
 // // - filter by Metal Cars (show only Toys = Cars and Material = metal):
-console.log(gameRoom.filterCars().filterByMaterial('metal'));
+// console.log(gameRoom.filterCars().filterByMaterial('metal'));
 // console.log(gameRoom.filterCars().filter(word=> word.material.startsWith('metal')));
