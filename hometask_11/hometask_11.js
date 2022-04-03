@@ -21,20 +21,20 @@ class GameRoom {
     }
 
     filterByFixPrice(fixPrice) {
-        return this.toys.filter(num=> num.price <= fixPrice);
+        return this.toys.filter(num => num.price <= fixPrice);
     }
 
     filterByMaterial(material) {
-        return this.toys.filter(word=> word.material.startsWith(material));
+        return this.toys.filter(word => word.material.startsWith(material));
     }
 
-
     filterCars() {
-        return this.toys.filter(name => {
+        this.toys.filter(name => {
             if (name.model) {
                 return name;
             }
         })
+        return this;
     }
 }
 
@@ -101,32 +101,37 @@ let newTeamGame = new DevelopingToys(45, 'wooden', 'small', '+5', 'hard', 'Storm
 gameRoom.addToy(newTeamGame);
 
 newTeamGame.addAsTeamGame();
-console.log(newTeamGame.isItTeamGame());
-console.log(newTeamGame.getRecommendation());
+// console.log(newTeamGame.isItTeamGame());
+// console.log(newTeamGame.getRecommendation());
 
-// // console.log(gameRoom);
+// // // console.log(gameRoom);
 
-// // // - sorting by price:
-gameRoom.sortByPrice('price');
-console.log(gameRoom);
+// // // // - sorting by price:
+// gameRoom.sortByPrice('price');
+// console.log(gameRoom);
 
-// // // - Total number of Toys:
-console.log(`Total number of Toys = ${gameRoom.getTotalAmount()}`);
+// // // // - Total number of Toys:
+// console.log(`Total number of Toys = ${gameRoom.getTotalAmount()}`);
 
-// // // - Total price of Toys:
-console.log(`Total price of Toys = ${gameRoom.getCommonPrice('price')}`);
+// // // // - Total price of Toys:
+// console.log(`Total price of Toys = ${gameRoom.getCommonPrice('price')}`);
 
-// // // - show only Cars:
-console.log(gameRoom.filterCars());
+// // // // - show only Cars:
+// console.log(gameRoom.filterCars());
 
 // // - filter by Fix price: show < =  Fix price:
-console.log(gameRoom.filterByFixPrice(20));
+// console.log(gameRoom.filterByFixPrice(20));
 // console.log(gameRoom);
 
 // // - filter by Material: show only wooden toys:
-console.log(gameRoom.filterByMaterial('wooden'));
+// console.log(gameRoom.filterByMaterial('wooden'));
 
+
+console.log(gameRoom.filterByFixPrice(20).filterByMaterial('metal'));
+
+// console.log(gameRoom.filterByMaterial('metal'));
+// console.log(gameRoom.filterByFixPrice(20));
 
 // // - filter by Metal Cars (show only Toys = Cars and Material = metal):
 // console.log(gameRoom.filterCars().filterByMaterial('metal'));
-console.log(gameRoom.filterCars().filter(word=> word.material.startsWith('metal')));
+// console.log(gameRoom.filterCars().filter(word=> word.material.startsWith('metal')));
