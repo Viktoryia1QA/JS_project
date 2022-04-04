@@ -24,7 +24,7 @@ function fib(n: number): number {
   return n <= 1 ? n : fib(n - 1) + fib(n - 2);
 }
 
-function createFibonacciArray(array: number[], n: number, m: number) {
+function createFibonacciArray(array: number[], n: number, m: number):void {
   let memberN: number = fib(n);
   let i: number;
   for (i = 0; i < m; i++) {
@@ -42,7 +42,7 @@ console.log(`3 task: Fibonacci Sequence from N  with length M `);
 console.log(arrayFib);
 
 //   4 task: how many match in value + position and  only in value
-function matchInValue(firstNumber: number, secondNumber: number) {
+function matchInValue(firstNumber: number, secondNumber: number):void  {
   let count = 0;
   const firstNumber1 = String(firstNumber);
   const secondNumber1 = String(secondNumber);
@@ -57,7 +57,7 @@ function matchInValue(firstNumber: number, secondNumber: number) {
 }
 matchInValue(1234, 2514);
 
-function matchInValueAndPosition(firstNumber: number, secondNumber: number) {
+function matchInValueAndPosition(firstNumber: number, secondNumber: number):void  {
   let count = 0;
   const firstNumber1 = String(firstNumber);
   const secondNumber1 = String(secondNumber);
@@ -71,11 +71,11 @@ function matchInValueAndPosition(firstNumber: number, secondNumber: number) {
 matchInValueAndPosition(1234, 2514);
 
 //5 task: sort array asc/desc
-function sortArrayAsc(array: number[]) {
+function sortArrayAsc(array: number[]): number[] {
   return array.sort((a, b) => b - a);
 }
 
-function sortArrayDesc(array: number[]) {
+function sortArrayDesc(array: number[]): number[] {
   return array.sort((a, b) => a - b);
 }
 const arrayForSort: number[] = [1, 20, 3, 405, 65, 65];
@@ -86,7 +86,7 @@ console.log(sortArrayDesc(arrayForSort));
 // 6 task: remove all duplicates from array
 const array6: any = [12, 25, 12, '123', '123', true, false, true, null, null];
 
-function removeDuplicatesArray(array: any) {
+function removeDuplicatesArray(array: any): any {
   const uniqSet = new Set(array);
   return [...uniqSet];
 }
