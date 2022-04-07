@@ -1,0 +1,16 @@
+{
+  "name": "unit-jasmine",
+  "version": "1.0.0",
+  "description": "Jasmine - creation Unit tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "VA",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^4.0.2",
+    "jasmine-pretty-html-reporter": "^0.2.5",
+    "jasmine-spec-reporter": "^7.0.0"
+  }
+}
