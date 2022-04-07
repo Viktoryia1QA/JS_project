@@ -21,19 +21,24 @@ class GameRoom {
     }
 
     filterByFixPrice(fixPrice) {
-        return this.toys.filter(num => num.price <= fixPrice);
+        let toysByFixPrice = this.toys.filter(num => num.price <= fixPrice);
+        this.toys = toysByFixPrice;
+        return this;
     }
 
     filterByMaterial(material) {
-        return this.toys.filter(word => word.material.startsWith(material));
+        let toysByMaterial = this.toys.filter(word => word.material.startsWith(material));
+        this.toys = toysByMaterial;
+        return this;    
     }
 
     filterCars() {
-        this.toys.filter(name => {
+        let toysCars = this.toys.filter(name => {
             if (name.model) {
                 return name;
             }
         })
+        this.toys = toysCars;
         return this;
     }
 }
@@ -88,13 +93,13 @@ class DevelopingToys extends Toys {
 const gameRoom = new GameRoom();
 
 gameRoom.addToy(new Cars(60, 'plastic', 'middle', '+3', 'audi', 'red'));
-gameRoom.addToy(new Cars(40, 'metal', 'small', '+5', 'bmw', 'white'));
+gameRoom.addToy(new Cars(20, 'metal', 'small', '+5', 'bmw', 'white'));
 
 gameRoom.addToy(new Dolls(50, 'stuffed', 'small', '+5', 'male', 'white'));
-gameRoom.addToy(new Dolls(20, 'plastic', 'small', '+5', 'female', 'black'));
+gameRoom.addToy(new Dolls(40, 'plastic', 'small', '+5', 'female', 'black'));
 
 gameRoom.addToy(new DevelopingToys(80, 'plastic', 'big', '0-3', 'easy', 'Smart toy'));
-gameRoom.addToy(new DevelopingToys(30, 'metal', 'big', '0-3', 'middle', 'Have fun'));
+gameRoom.addToy(new DevelopingToys(10, 'metal', 'big', '0-3', 'middle', 'Have fun'));
 gameRoom.addToy(new DevelopingToys(120, 'wooden', 'small', '+5', 'hard', 'Storm brain'));
 
 let newTeamGame = new DevelopingToys(45, 'wooden', 'small', '+5', 'hard', 'Storm brain');
@@ -126,12 +131,8 @@ newTeamGame.addAsTeamGame();
 // // - filter by Material: show only wooden toys:
 // console.log(gameRoom.filterByMaterial('wooden'));
 
-
+//- filter by Material (Metal) and Fix price : show < =  Fix price:
 console.log(gameRoom.filterByFixPrice(20).filterByMaterial('metal'));
 
-// console.log(gameRoom.filterByMaterial('metal'));
-// console.log(gameRoom.filterByFixPrice(20));
-
 // // - filter by Metal Cars (show only Toys = Cars and Material = metal):
-// console.log(gameRoom.filterCars().filterByMaterial('metal'));
-// console.log(gameRoom.filterCars().filter(word=> word.material.startsWith('metal')));
+console.log(gameRoom.filterCars().filterByMaterial('metal'));
