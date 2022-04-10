@@ -18,7 +18,7 @@ class BaseElements extends BasePage {
 
     async dragAndDrop(element, x = 0, y = 0, waitTime = 5000) {
         await driver.wait(until.elementIsVisible(element), waitTime);
-        await driver.actions().dragAndDrop(carouselContainer, { x: x, y: y }).perform();
+        await driver.actions().dragAndDrop(element, { x: x, y: y }).perform();
     }
 
     async scrollIntoView(element, waitTime = 5000) {
