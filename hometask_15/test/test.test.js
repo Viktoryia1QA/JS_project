@@ -5,6 +5,8 @@ const BasePage = require('../pageObject/basePage');
 const BaseElements = require('../helpers/baseElements');
 const HomePage = require('../pageObject/homePage');
 const SearchComponents = require('../pageObject/pageComponents/searchComponents');
+const config = require('../utils/config');
+
 
 const baseElements = new BaseElements();
 const homePage = new HomePage();
@@ -13,7 +15,7 @@ const searchComponents = new SearchComponents();
 describe('Chromedriver tests', () => {
 
     before(async () => {
-        await BasePage.setRect();
+        await config();
     });
 
     after(async () => {
@@ -22,16 +24,16 @@ describe('Chromedriver tests', () => {
 
     it(`Check Text 'ChromeDriver' in MainTitle`, async () => {
         await BasePage.navigate('https://chromedriver.chromium.org/');
-        expect(await searchComponents.getTitle).to.contain('ChromeDriver');
+        expect(await driver.getTitle()).to.contain('ChromeDriver');
     })
 
 
     it(`Check Text 'Chrome Extensions' in MainTitle`, async () => {
         await BasePage.navigate('https://chromedriver.chromium.org/');
         await baseElements.click(homePage.chromeExtensionsTab);
-        
-        expect(await searchComponents.getCurrentUrl).to.equal('https://chromedriver.chromium.org/extensions');
-        expect(await searchComponents.getTitle).to.contain('Chrome Extensions');
+
+        expect(await driver.getCurrentUrl()).to.equal('https://chromedriver.chromium.org/extensions');
+        expect(await driver.getTitle()).to.contain('Chrome Extensions');
     })
 
     it('Check search functionality', async () => {
@@ -42,10 +44,10 @@ describe('Chromedriver tests', () => {
         await BasePage.sleep(2000);
         await driver.wait(until.elementIsVisible(searchComponents.resultsOnThisSite), 2000);
         const descriptions = await searchComponents.searchResultDescription;
-       
-        expect(await searchComponents.getCurrentUrl).to.contain('driver');
+
+        expect(await driver.getCurrentUrl()).to.contain('driver');
         expect(await descriptions[0].getText()).to.contain('driver');
-        
+
     })
-  
+
 });

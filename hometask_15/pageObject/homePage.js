@@ -14,11 +14,7 @@ class HomePage extends BasePage {
         return driver.findElement(By.xpath('//*[@id="WDxLfe"]//*[contains(@href, "/extensions")]/ancestor::li'));
     }
 
-    get searchButton() {
-        return driver.findElement(By.xpath('//div[@class="RBEWZc"]'));
-    }
-
-    
+     
 }
 
 module.exports = HomePage;

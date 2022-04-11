@@ -26,20 +26,11 @@ class SearchComponents extends BasePage {
     }
 
 
-
     get checkTextMainTitle() {
         return driver.findElement(By.xpath('//*[@id="h.p_ID_13"]/*[contains(text(), ChromeDriver)]'));
     }
 
-    get getTitle() {
-        return driver.getTitle();
-    }
-
-    get getCurrentUrl() {
-        return driver.getCurrentUrl();
-    }
-
-
+    
 }
 
 module.exports = SearchComponents;

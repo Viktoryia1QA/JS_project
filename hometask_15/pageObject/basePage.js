@@ -18,11 +18,6 @@ class BasePage {
         await driver.sleep(time);
     };
 
-    static async setRect(width = 1920, height = 768) {
-        await driver.manage().window().setRect({ width: width, height: height });
-
-    };
-
 }
 
 module.exports = BasePage;
