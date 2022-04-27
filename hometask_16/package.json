@@ -1,0 +1,24 @@
+{
+    "name": "hometask_16",
+    "version": "1.0.0",
+    "description": "webdriver_IO hometask 16 Lesson 20 ",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha",
+        "wdio": "wdio run wdio.conf.js"
+    },
+    "author": "VA",
+    "license": "ISC",
+    "dependencies": {
+        "webdriverio": "^7.19.4"
+    },
+    "devDependencies": {
+        "@wdio/allure-reporter": "^7.19.5",
+        "@wdio/cli": "^7.19.5",
+        "@wdio/local-runner": "^7.19.5",
+        "@wdio/mocha-framework": "^7.19.5",
+        "@wdio/spec-reporter": "^7.19.5",
+        "chromedriver": "^100.0.0",
+        "wdio-chromedriver-service": "^7.3.2"
+    }
+}
