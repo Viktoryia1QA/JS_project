@@ -29,7 +29,7 @@ class SearchComponents extends BasePage {
         await this.searchField.setValue(request);
         await this.firstSearchResult.waitForDisplayed(timeout);
         await this.firstSearchResult.click();
-        await this.searchResultTitle.waitForDisplayed(timeout);
+        return this.searchResultTitle.waitForDisplayed(timeout);
     }
 
 }

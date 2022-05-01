@@ -1,5 +1,5 @@
 const PageFactory = require('../pageObjects/pageFactory');
-// const {expect} = require ('chai');
+const { expect } = require('chai');
 
 
 const I = new PageFactory();
@@ -8,15 +8,14 @@ describe(' WebdriverIO  tests', () => {
     it(`1. Check Text 'WebdriverIO ' in MainTitle`, async () => {
         await I.homePage.navigate('https://webdriver.io/');
 
-        await expect(browser).toHaveTitleContaining('WebdriverIO');
-        await expect(browser).toHaveUrlContaining('webdriver');
+        await expect(await browser.getTitle()).to.contain('WebdriverIO');
+        await expect(await browser.getUrl()).to.contain('webdriver');
     })
 
     it(`2. Check subTitle on HomePage`, async () => {
         await I.homePage.navigate('https://webdriver.io/');
 
-        await expect(I.homePage.subTitle).toBeExisting();
-        await expect(I.homePage.subTitle).toHaveText('Next-gen browser and mobile automation test framework for Node.js');
+        await expect(await I.homePage.subTitle.getText()).to.contain('Next-gen browser and mobile automation test framework for Node.js');
 
     })
 
@@ -25,8 +24,8 @@ describe(' WebdriverIO  tests', () => {
         await I.homePage.navigate('https://webdriver.io/');
         await I.baseElement.click(I.header.blogButton);
 
-        await expect(browser).toHaveTitleContaining('Blog');
-        await expect(browser).toHaveUrlContaining('blog');
+        await expect(await browser.getTitle()).to.contain('Blog');
+        await expect(await browser.getUrl()).to.contain('blog');
     })
 
     it(`4. Check searching functionality`, async () => {
@@ -34,8 +33,11 @@ describe(' WebdriverIO  tests', () => {
         await I.baseElement.click(I.searchComponents.searchButton);
         await I.searchComponents.getSearch('Expect');
 
-        await expect(browser).toHaveUrlContaining('expect');
-        await expect(await I.searchComponents.searchResultTitle).toHaveText('Expect');
+        await expect(await browser.getUrl()).to.contain('expect');
+
+        console.log(await I.searchComponents.searchResultTitle.getText());
+
+        await expect(await I.searchComponents.searchResultTitle.getText()).to.contain('Expect');
 
     })
 
@@ -45,17 +47,12 @@ describe(' WebdriverIO  tests', () => {
         await I.baseElement.click(I.apiPage.tabElement);
         await I.baseElement.click(I.apiPage.elemClick);
 
-        await expect(browser).toHaveUrlContaining('click');
+        await expect(await browser.getUrl()).to.contain('click');
 
         console.log(await I.apiPage.headerSelector.getText());
 
-        //Test is failed with WdIO {expect},
-        //but in console-log and with {expect} of chai-library is displayed right expected result. 
-        
-        //Expected: "click"
-        // Received: undefined
+        await expect(await I.apiPage.headerSelector.getText()).to.contain('click');
 
-        await expect(await I.apiPage.headerSelector.getText()).toHaveText('click');
     })
 
 
@@ -66,13 +63,7 @@ describe(' WebdriverIO  tests', () => {
 
         console.log(await I.header.getTheme());
 
-        //Test is failed with WdIO {expect},
-        //but in console-log and with {expect} of chai-library is displayed right expected result. 
-
-        //Expected: "click"
-        // Received: undefined
-
-        await expect(await I.header.getTheme()).toHaveText('dark');
+        await expect(await I.header.getTheme()).to.contain('dark');
     })
 
 });
