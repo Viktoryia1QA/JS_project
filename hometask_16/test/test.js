@@ -1,6 +1,4 @@
 const PageFactory = require('../pageObjects/pageFactory');
-// const {expect} = require ('chai');
-
 
 const I = new PageFactory();
 
@@ -51,7 +49,7 @@ describe(' WebdriverIO  tests', () => {
 
         //Test is failed with WdIO {expect},
         //but in console-log and with {expect} of chai-library is displayed right expected result. 
-        
+
         //Expected: "click"
         // Received: undefined
 
