@@ -1,0 +1,35 @@
+{
+  "name": "hometask_18_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "jest": "^28.0.2",
+    "jest-html-reporter": "^3.5.0",
+    "jest-junit": "^13.2.0",
+    "jsonschema": "^1.4.0"
+  },
+  "jest-junit": {
+    "suiteName": "tests",
+    "outputDirectory": "./reports",
+    "outputName": "report.xml",
+    "uniqueOutputName": "false",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
+  },
+  "jest-html-reporter": {
+    "pageTitle": "Integrations Test Report",
+    "outputPath": "./test-report/test-report.html",
+    "includeFailureMsg": true,
+    "includeConsoleLog": true,
+    "includeSuiteFailure": true
+  }
+}

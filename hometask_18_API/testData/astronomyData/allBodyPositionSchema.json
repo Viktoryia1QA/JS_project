@@ -1,0 +1,2219 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "observer": {
+          "type": "object",
+          "properties": {
+            "location": {
+              "type": "object",
+              "properties": {
+                "longitude": {
+                  "type": "number"
+                },
+                "elevation": {
+                  "type": "integer"
+                },
+                "latitude": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "longitude",
+                "elevation",
+                "latitude"
+              ]
+            }
+          },
+          "required": [
+            "location"
+          ]
+        },
+        "dates": {
+          "type": "object",
+          "properties": {
+            "from": {
+              "type": "string"
+            },
+            "to": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "from",
+            "to"
+          ]
+        },
+        "table": {
+          "type": "object",
+          "properties": {
+            "rows": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                },
+                                "phase": {
+                                  "type": "object",
+                                  "properties": {
+                                    "fraction": {
+                                      "type": "string"
+                                    },
+                                    "string": {
+                                      "type": "string"
+                                    },
+                                    "angel": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "fraction",
+                                    "string",
+                                    "angel"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude",
+                                "phase"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "null"
+                                },
+                                "magnitude": {
+                                  "type": "null"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "cells": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "date": {
+                              "type": "string"
+                            },
+                            "distance": {
+                              "type": "object",
+                              "properties": {
+                                "fromEarth": {
+                                  "type": "object",
+                                  "properties": {
+                                    "km": {
+                                      "type": "string"
+                                    },
+                                    "au": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "km",
+                                    "au"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "fromEarth"
+                              ]
+                            },
+                            "position": {
+                              "type": "object",
+                              "properties": {
+                                "constellation": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "id": {
+                                      "type": "string"
+                                    }
+                                  },
+                                  "required": [
+                                    "name",
+                                    "id"
+                                  ]
+                                },
+                                "equatorial": {
+                                  "type": "object",
+                                  "properties": {
+                                    "rightAscension": {
+                                      "type": "object",
+                                      "properties": {
+                                        "hours": {
+                                          "type": "string"
+                                        },
+                                        "string": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "hours",
+                                        "string"
+                                      ]
+                                    },
+                                    "declination": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "rightAscension",
+                                    "declination"
+                                  ]
+                                },
+                                "horizonal": {
+                                  "type": "object",
+                                  "properties": {
+                                    "altitude": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    },
+                                    "azimuth": {
+                                      "type": "object",
+                                      "properties": {
+                                        "string": {
+                                          "type": "string"
+                                        },
+                                        "degrees": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "required": [
+                                        "string",
+                                        "degrees"
+                                      ]
+                                    }
+                                  },
+                                  "required": [
+                                    "altitude",
+                                    "azimuth"
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "constellation",
+                                "equatorial",
+                                "horizonal"
+                              ]
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "extraInfo": {
+                              "type": "object",
+                              "properties": {
+                                "elongation": {
+                                  "type": "string"
+                                },
+                                "magnitude": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "elongation",
+                                "magnitude"
+                              ]
+                            },
+                            "id": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "date",
+                            "distance",
+                            "position",
+                            "name",
+                            "extraInfo",
+                            "id"
+                          ]
+                        }
+                      ]
+                    },
+                    "entry": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "id"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "cells",
+                    "entry"
+                  ]
+                }
+              ]
+            },
+            "header": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "rows",
+            "header"
+          ]
+        }
+      },
+      "required": [
+        "observer",
+        "dates",
+        "table"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
