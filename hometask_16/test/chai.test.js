@@ -4,7 +4,7 @@ const { expect } = require('chai');
 
 const I = new PageFactory();
 
-describe(' WebdriverIO  tests', () => {
+describe.skip(' WebdriverIO  tests', () => {
     it(`1. Check Text 'WebdriverIO ' in MainTitle`, async () => {
         await I.homePage.navigate('https://webdriver.io/');
 
