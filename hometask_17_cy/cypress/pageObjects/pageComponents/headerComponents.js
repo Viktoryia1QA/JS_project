@@ -100,4 +100,4 @@ class Header {
 }
 
 
-module.exports = new Header()
+module.exports = Header

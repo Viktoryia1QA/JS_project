@@ -27,4 +27,4 @@ class Search {
 }
 
 
-module.exports = new Search()
+module.exports = Search

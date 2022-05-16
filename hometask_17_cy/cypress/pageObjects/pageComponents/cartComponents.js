@@ -50,4 +50,4 @@ class Cart {
     }
 }
 
-module.exports = new Cart()
+module.exports = Cart

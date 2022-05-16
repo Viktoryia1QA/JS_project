@@ -1,7 +1,6 @@
 class HomePage {
     constructor() {
 
-
         this.mainMenuElement = function (number) {
             return cy.get('.header_menu__container div')
                 .eq(number);
@@ -23,7 +22,7 @@ class HomePage {
     checkNavigationHomePage() {
         this.mainMenu().contains('Телевизоры').click()
         cy.location('pathname').should('include', 'televizory')
-        
+
         cy.go('back')
         cy.location('pathname').should('not.include', 'televizory')
 
@@ -35,4 +34,4 @@ class HomePage {
 
 }
 
-module.exports = new HomePage()
+module.exports = HomePage
