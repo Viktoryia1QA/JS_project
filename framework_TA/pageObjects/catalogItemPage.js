@@ -66,8 +66,8 @@ class CatalogItemPage extends BasePage {
 
     }
 
-    //sorting on Item Catalog-page: 0 - default; 1 - Asc; 2 - Desc; 3 - by Rating.
-    async getSortingOnItemCatalogPage(number) {
+    //make sorting on Item Catalog-page: 0 - default; 1 - Asc; 2 - Desc; 3 - by Rating.
+    async makeSortingOnItemCatalogPage(number) {
         await this.buttonYesFromMinsk().waitFor('visible');
         await this.buttonYesFromMinsk().click();
         await this.linkAllOffers().waitFor('visible');
@@ -77,6 +77,13 @@ class CatalogItemPage extends BasePage {
         await this.linkSortingByNumber(number).waitFor('visible');
         await this.linkSortingByNumber(number).click();
 
+    }
+
+    async getSortingOnItemCatalogPage() {
+        await this.buttonShowAllsuggestion().waitFor('visible');
+        await this.buttonShowAllsuggestion().click();
+        let listOfPrice = await this.listOfPrice().allTextContents();
+        let newlistOfPrice = listOfPrice.sort((a, b) => a - b);
     }
 
 }
