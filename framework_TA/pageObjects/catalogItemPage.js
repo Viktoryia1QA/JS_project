@@ -83,7 +83,7 @@ class CatalogItemPage extends BasePage {
         await this.buttonShowAllsuggestion().waitFor('visible');
         await this.buttonShowAllsuggestion().click();
         let listOfPrice = await this.listOfPrice().allTextContents();
-        let newlistOfPrice = listOfPrice.sort((a, b) => a - b);
+        return listOfPrice.sort((a, b) => a - b);
     }
 
 }
