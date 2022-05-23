@@ -3,6 +3,8 @@ package-lock.json
 build
 reports
 test-report
+test-results
+playwright-report
 code
 1
 OOP
