@@ -1,0 +1,19 @@
+npm init
+
+# Run from your project's root directory  - can select js or ts
+npm init playwright@latest 
+
+# Limit failures and fail fast
+npx playwright test --max-failures=10
+
+# CSV parser for Node.js and the web
+npm install csv-parse
+
+# You will then be able to run only that test:
+npx playwright test --grep @anyTag
+
+# Or if you want the opposite, you can skip the tests with a certain tag:
+npx playwright test --grep-invert @anyTag
+
+# codegen by url
+npx playwright codegen onliner.by
