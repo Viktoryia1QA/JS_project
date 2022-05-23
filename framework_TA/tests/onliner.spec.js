@@ -202,12 +202,12 @@ test.describe('Check onliner.by', () => {
     await expect(listOfPrice).toHaveCount(20);
   })
 
-  test.only(`25. Check show all suggestions on Item Catalog page `, async ({ page }) => {
+  test(`25. Check sorting on Item Catalog page `, async ({ page }) => {
     const I = new PageFactory(page);
     await page.goto('https://catalog.onliner.by/mobile/apple/iphone13/prices?order=price%3Aasc');
-    await I.action.waitandClick(I.catalogItemPage.buttonShowAllsuggestion());
-    const listOfPrice = await I.catalogItemPage.listOfPrice();
-    await expect(listOfPrice).toHaveCount(20);
+    const sortingList = await (await I.catalogItemPage.getSortingOnItemCatalogPage());
+    const firstItemOnPage = await I.catalogItemPage.listOfPriceByNumber(0).textContent();
+    await expect(sortingList[0]).toBe(firstItemOnPage);
   })
 
 })
