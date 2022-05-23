@@ -187,4 +187,20 @@ test.describe('Check onliner.by', () => {
     await expect(numberItemsInCompare2).toContain('2');
   })
 
+  test(`23. Check sorting (desc) on Item Catalog page through Searching`, async ({ page }) => {
+    const I = new PageFactory(page);
+    await I.search.getSearchByCatalog('Смартфон Apple iPhone 13 128GB');
+    await I.catalogItemPage.getSortingOnItemCatalogPage(2);
+    await expect(page.url()).toContain('desc');
+
+  })
+  test(`24. Check show all suggestions on Item Catalog page `, async ({ page }) => {
+    const I = new PageFactory(page);
+    await page.goto('https://catalog.onliner.by/mobile/apple/iphone13/prices?order=price%3Aasc');
+    await I.action.waitandClick(I.catalogItemPage.buttonShowAllsuggestion())
+    const listOfPrice = await I.catalogItemPage.listOfPrice();
+    await expect(listOfPrice).toHaveCount(17);
+  })
+
+
 })
